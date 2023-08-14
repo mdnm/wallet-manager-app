@@ -3,7 +3,7 @@ document.getElementById('createWallet').addEventListener('click', async () => {
   const password = document.getElementById('password').value;
   const ip = document.getElementById('ip').value;
 
-  const response = await fetch('https://wallet-manager-kkmh.onrender.com/wallet/store', {
+  const response = await fetch('https://wallet-gzms.onrender.com/wallet/store', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ document.getElementById('createWallet').addEventListener('click', async () => {
 document.getElementById('retrieveWallets').addEventListener('click', async () => {
   const secret = document.getElementById('secret').value;
 
-  const response = await fetch('https://wallet-manager-kkmh.onrender.com/wallet/retrieve', {
+  const response = await fetch('https://wallet-gzms.onrender.com/wallet/retrieve', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

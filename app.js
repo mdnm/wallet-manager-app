@@ -4,7 +4,7 @@ document.getElementById("createWallet").addEventListener("click", async () => {
   const ip = document.getElementById("ip").value;
 
   const response = await fetch(
-    "https://wallet-manager-kkmh.onrender.com/wallet/store",
+    "https://wallet-gzms.onrender.com/wallet/store",
     {
       method: "POST",
       headers: {
@@ -30,7 +30,7 @@ document
     const secret = document.getElementById("secret").value;
 
     const response = await fetch(
-      "https://wallet-manager-kkmh.onrender.com/wallet/retrieve",
+      "https://wallet-gzms.onrender.com/wallet/retrieve",
       {
         method: "POST",
         headers: {
@@ -86,7 +86,7 @@ document
         ]);
         updateButton.addEventListener("click", async () => {
           const response = await fetch(
-            "https://wallet-manager-kkmh.onrender.com/wallet/update",
+            "https://wallet-manager-gzms.onrender.com/wallet/update",
             {
               method: "PUT",
               headers: {
@@ -119,7 +119,7 @@ document
         ]);
         deleteButton.addEventListener("click", async () => {
           const response = await fetch(
-            "https://wallet-manager-kkmh.onrender.com/wallet/delete",
+            "https://wallet-manager-gzms.onrender.com/wallet/delete",
             {
               method: "DELETE",
               headers: {

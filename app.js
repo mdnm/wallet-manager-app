@@ -47,6 +47,8 @@ document
 
       const wallets = await response.json();
       const walletsDiv = document.getElementById("wallets");
+      walletsDiv.innerHTML = "";
+
       const title = document.createElement("h3");
       title.innerHTML = '<h3 class="text-xl font-medium mb-2">Wallets:</h3>';
       walletsDiv.appendChild(title);
@@ -64,31 +66,27 @@ document
         const ipInput = document.createElement("input");
         ipInput.setAttribute("type", "text");
         ipInput.setAttribute("value", wallet.ip);
-        ipInput.classList.add(["p-2", "w-full", "border", "rounded-md"]);
+        ipInput.setAttribute("class", "p-2 w-full border rounded-md");
 
         const excelIdInput = document.createElement("input");
         excelIdInput.setAttribute("type", "text");
         excelIdInput.setAttribute("value", wallet.excel_id);
-        excelIdInput.classList.add(["p-2", "w-full", "border", "rounded-md"]);
+        excelIdInput.setAttribute("class", "p-2 w-full border rounded-md");
 
         const inputContainer = document.createElement("div");
-        inputContainer.classList.add(["flex", "flex-col", "gap-2", "mb-2"]);
+        inputContainer.setAttribute("class", "flex flex-col gap-2 mb-2");
         inputContainer.appendChild(ipInput);
         inputContainer.appendChild(excelIdInput);
 
         const updateButton = document.createElement("button");
         updateButton.innerHTML = "Update";
-        updateButton.classList.add([
-          "p-2",
-          "w-full",
-          "border",
-          "rounded-md",
-          "bg-green-500",
-          "text-white",
-        ]);
+        updateButton.setAttribute(
+          "class",
+          "p-2 w-full border rounded-md bg-green-500 text-white"
+        );
         updateButton.addEventListener("click", async () => {
           const response = await fetch(
-            "https://wallet-manager-gzms.onrender.com/wallet/update",
+            "https://wallet-gzms.onrender.com/wallet/update",
             {
               method: "PUT",
               headers: {
@@ -111,17 +109,13 @@ document
 
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
-        deleteButton.classList.add([
-          "p-2",
-          "w-full",
-          "border",
-          "rounded-md",
-          "border-red-500",
-          "text-red-500",
-        ]);
+        deleteButton.setAttribute(
+          "class",
+          "p-2 w-full border rounded-md border-red-500 text-red-500 hover:text-white hover:bg-red-500"
+        );
         deleteButton.addEventListener("click", async () => {
           const response = await fetch(
-            "https://wallet-manager-gzms.onrender.com/wallet/delete",
+            "https://wallet-gzms.onrender.com/wallet/delete",
             {
               method: "DELETE",
               headers: {
@@ -142,12 +136,7 @@ document
         });
 
         const buttonContainer = document.createElement("div");
-        buttonContainer.classList.add([
-          "w-full",
-          "flex",
-          "items-center",
-          "gap-2",
-        ]);
+        buttonContainer.setAttribute("class", "w-full flex items-center gap-2");
 
         buttonContainer.appendChild(updateButton);
         buttonContainer.appendChild(deleteButton);
